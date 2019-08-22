@@ -149,3 +149,13 @@ POWERLINE_BASH_SELECT=1
 
 #exec fish
 
+
+#History completion
+
+ bind '"\e[A": history-search-backward'
+ bind '"\e[B": history-search-forward'
+
+#tmux autostart
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
